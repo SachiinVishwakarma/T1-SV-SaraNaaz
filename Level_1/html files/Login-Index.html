@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login_Page</title>
+    <link rel="stylesheet" href="/css-files/Login-style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="card">
+
+            <div class="heading">
+                <h2>Welcomeback Back</h2>
+                <p class="para">Sign in continue to your dashboard</p>
+            </div>
+
+            <div>
+                <form id="myForm">
+                    <div class="email">
+                        <b><label for="email">Email Address:</label> </b>
+                        <input class="inp" id="email" type="text" placeholder="Enter your email address">
+                        <small id="errEmail"></small>
+                        <!-- innerHTML from JS -->
+                    </div>
+
+                    <div class="password">
+                        <b><label for="password">Password:</label></b>
+                        <input class="inp" id="password" type="password" placeholder="Enter password">
+                        <small id="errPass"></small>
+                        <!-- innerHTML from JS -->
+                    </div>
+
+                    <p class="hint">Password must be atleast 8 characters long.</p>
+
+                    <div class="check">
+                        <small> <input id="rememberMe" type="checkbox"> Remember me for 30 days</small>
+
+                        <span class="anchor">Forgot password?</span>
+
+                    </div>
+
+                    <div class="btn"><button type="submit" onclick="check()"> <a id="link">Sign in</a></button></div>
+                </form>
+
+            </div>
+
+            <div class="createAcc">
+                <small class="small-para"> New to WebTech Practice? <a class="anchor"
+                        href="http://127.0.0.1:5500/html%20files/SignUp-index.html">Create an account</a></small>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/js files/Login-script.js"></script>
+
+</html>

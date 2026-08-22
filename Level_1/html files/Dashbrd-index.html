@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard-SPA</title>
+    <link rel="stylesheet" href="/css-files/Dashbrd-style.css">
+</head>
+
+<body>
+
+    <section id="dashboard">
+
+        <div class="container">
+            <aside class="sidebarUI">
+
+                <div class="container">
+
+                    <div class="sidebar">
+
+                        <div class="userProfile">
+                            <h2 id="logo"></h2>
+                            <div class="head"><!--User Name and email using JS --> </div>
+                        </div>
+
+                        <div class="dashMenu">
+                            <div class="sideTitle">DASHBOARD</div>
+                            <div class="items">
+                                <div class="item ele selectedMenu"><button id="selectedMenu_overview" class="s-menuBar"
+                                        onclick="showDashPage('overview') ">Overview</button>
+                                </div>
+                                <div class="item ele "><button id="selectedMenu_profile" class="s-menuBar"
+                                        onclick="showDashPage('profile')">Profile Settings</button>
+                                </div>
+                                <div class="item ele "><button id="selectedMenu_security" class="s-menuBar"
+                                        onclick="showDashPage('security')">Security</button></div>
+                                <div class="item ele "><button id="selectedMenu_notification" class="s-menuBar"
+                                        onclick="showDashPage('notification')">Notification</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dashMenu">
+                            <div class="sideTitle">QUICK ACTION</div>
+                            <div class="items">
+                                <div class="item ele "><button id="selectedMenu_help" class="s-menuBar"
+                                        onclick="showDashPage('help')">Help & Support</button></div>
+
+                            </div>
+                        </div>
+
+                        <div class="dashMenu" id="account-section">
+                            <div class="sideTitle">ACCOUNT</div>
+                            <div class="items">
+                                <div class="item"><button class="s-menuBar" onclick="poplastLogin()" id="signOut"><a
+                                            href="http://127.0.0.1:5500/html%20files/Login-Index.html">Sign
+                                            Out</a></button></div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </aside>
+
+
+            <main class="mainContent">
+
+                <section id="overview" class="dashPage active">
+
+                    <div class="top-navbar">
+                        <h3>WebTech Practice Dashboard</h3>
+                    </div>
+                    <div class="dashboard-card">
+                        <div class="welcmSection">
+                            <div class="welcmUser"><!--inner html--></div>
+                            <div id="para">Manage your profile settings and account preferences. Your data is securely
+                                stored in your browser's localStorage.</div>
+                        </div>
+
+                        <div class="over-squreCard">
+                            <div class="s-card">
+                                <div class="title">Theme</div>
+                                <p class="para2">Dark/Light mode persisted across all pages</p>
+                                <div class="markLine"></div>
+                            </div>
+
+                            <div class="s-card">
+                                <div class="title">Authentication</div>
+                                <p class="para2">Secure session stored in browser storage</p>
+                                <div class="markLine"></div>
+                            </div>
+
+                            <div class="s-card">
+                                <div class="title">Profile</div>
+                                <p class="para2">20% profile completed(1/5 fields)</p>
+                                <div class="markLine"></div>
+                            </div>
+
+                            <div class="s-card">
+                                <div class="title">Security</div>
+                                <p class="para2">Password protection and account security</p>
+                                <div class="markLine"></div>
+                            </div>
+                        </div>
+
+                        <div id="quick"><b>Quick Actions</b></div>
+                        <div class="over-ractCard">
+                            <button onclick="showDashPage('profile')" class="r-card  item ele">
+                                <div class="r-crd-head">Edit Profile</div>
+                                <p class="para3">Update your personal information</p>
+                            </button>
+
+                            <button onclick="showDashPage('security')" class="r-card item ele">
+                                <div class="r-crd-head">Change Password</div>
+                                <p class="para3">Update your Account security </p>
+                            </button>
+
+
+                        </div>
+
+
+                    </div>
+                </section>
+
+                <section id="profile" class="dashPage ">
+
+                    <div class="top-navbar">
+                        <h3>WebTech Practice Dashboard</h3>
+                    </div>
+                    <div class="dashboard-card">
+
+                        <div class="profile">
+                            <h2 id="profile-title">Profile Settings</h2>
+                            <div class="title" id="personalInfo">Personal Information </div>
+                        </div>
+
+
+                        <form id="profileUpdate">
+                            <div class="inputSection">
+                                <div class="inputbox">
+
+                                    <div class="fullName box">
+                                        <label for="fName">Full Name</label>
+                                        <input class="inp" type="text" name="fullName" required>
+                                        <div id="errFullName"></div>
+                                        <!--Inner html-->
+                                    </div>
+
+                                    <div class="DOB box">
+                                        <label for="DOB">Date of Birth</label>
+                                        <input class="inp" type="date" name="birthDate"  placeholder="dd-mm-yyyy" max=""   required>
+                                    </div>
+
+
+                                </div>
+
+
+                                <div class="inputbox">
+
+                                    <div class="email box">
+                                        <label for="email">Email Address</label>
+                                        <input class="inp" type="email" name="emailAdd">
+                                        <div id="errEmail"></div>
+                                        <!-- use Innter html-->
+                                    </div>
+
+                                    <div class="phone box">
+                                        <label for="phone">Phone Number</label>
+                                        <input name="phone" class="inp" type="phone" placeholder="+91 9876543210">
+                                        <div id="errphoneNo"></div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="addressSection">
+
+                                <div class="title address">Address Information</div>
+                                <label for="address">Street Address</label>
+                                <textarea id="addressSection" name="addressSection"
+                                    placeholder="Enter your complete address"></textarea>
+                                <div id="erraddrss"></div>
+                            </div>
+
+                            <div class="inputSection" id="section-2">
+                                <div class="inputbox">
+
+                                    <div class="pincode box">
+                                        <label for="Pin">PIN Code</label>
+                                        <input class="inp" type="phone" name="pincode" placeholder="123456">
+                                        <div id="errpinCode"></div>
+                                    </div>
+
+                                    <div class="city box">
+                                        <label for="city">City</label>
+                                        <input class="inp" type="text" name="city" placeholder="Ranchi" required>
+                                    </div>
+
+
+                                </div>
+
+
+                                <div class="inputbox">
+
+                                    <div class="country box">
+                                        <label for="country">Country</label>
+                                        <input class="inp" type="text" name="country" placeholder="India" required>
+                                    </div>
+
+                                    <div class="gitHub box">
+                                        <label for="gitHub">GitHub Profile</label>
+                                        <input class="inp" type="text" name="gitHubProfile"
+                                            placeholder="https//github.com/username" required>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="btn">
+                                <button class="btn1" id="cnclChange">Cancel changes</button>
+                                <button class="btn1" id="save" type="submit">Save changes</button>
+                            </div>
+
+                        </form>
+
+
+                    </div>
+
+                </section>
+
+                <section id="security" class="dashPage ">
+
+
+                    <div class="top-navbar">
+                        <h3>WebTech Practice Dashboard</h3>
+                    </div>
+                    <div class="dashboard-card">
+
+                        <div class="security">
+                            <h2 class="secure-security">Security Settings</h2>
+                            <div class="title" id="personalInfo">Security Settings </div>
+                            <p id="newPara">Keep your account secure by using a strong password and changing it
+                                regularly.</p>
+                        </div>
+
+
+                        <form id="securityForm">
+                            <div class="inputSection">
+                                <div class="inputbox">
+
+                                    <div class="currentPass box">
+                                        <label for="crrntPass">Current Password</label>
+                                        <input class="inp" type="password" name="crrntPass"
+                                            placeholder="Enter current password" required>
+                                        <div id="errCrrntPass"></div> <!--InnerText-->
+                                    </div>
+
+
+                                    <div class="newPass box">
+                                        <label for="nPass">New Password</label>
+                                        <input class="inp" type="password" name="Npass"
+                                            placeholder="Minimum 8 characters" required>
+                                        <div id="errNpass"><!--inner text-->
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="confirmSection">
+
+                                <label for="Confirm">Confirm New Password</label>
+                                <input type="password" name="Confirm" id="confirmInp" name="Confirm"
+                                    placeholder="Re-enter new password">
+                                <dix id="errConfirm"></dix><!--Inner text -->
+                            </div>
+
+                            <div class="btn">
+                                <button class="btn1" id="save" type="submit">Update Password</button>
+                                <button id="clearbtn" class="btn1" onclick="clear()">Clear</button>
+
+                            </div>
+
+                        </form>
+
+                        <h2 id="personalInfo">Security Settings</h2>
+                        <div class="ractCard">
+                            <div class="r-card">
+                                <div class="icon"><img src="/Assets/icon.png" alt="Calender Icon"> </div>
+                                <div class="title2">Account Created</div>
+                                <p class="para3" id="showDate"></p><!--ShowData-->
+                            </div>
+
+                            <div class="r-card">
+                                <div class="icon"><img src="/Assets/icon.png" alt="Calender Icon"> </div>
+                                <div class="title2">Last Update</div>
+                                <p class="para3" id="lastUpdated"></p><!--last update-->
+                            </div>
+
+
+                            <div class="r-card">
+                                <div class="icon"><img src="/Assets/icon.png" alt="Calender Icon"> </div>
+                                <div class="title2">Session</div>
+                                <p class="para3">Current browser session active</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="notification" class="dashPage ">
+                    <div class="top-navbar">
+                        <h3>WebTech Practice Dashboard</h3>
+                    </div>
+                    <div class="dashboard-card">
+
+                        <div class="notification">
+                            <h2 class="notification-title">Notifications</h2>
+                            <div class="title icon" id="personalInfo"><img class="image icon2" src="/Assets/Bell.png"
+                                    alt="Bell Icon">
+                                Notification Preference </div>
+                            <p id="newPara">Manage how and when you receive notifications about your account
+                                activity</p>
+                        </div>
+
+
+
+
+
+                        <div class="ractCard">
+                            <div class="r-card">
+                                <div class="icon"><img class="image" src="/Assets/Email.png" alt=" Email Icon"> </div>
+                                <div class="title2">Email Notifications</div>
+                                <p class="para3">Receive important updates via email</p>
+                                <p class="enableInp"><input class="check" type="checkbox">Enable email notifications
+                                </p>
+                            </div>
+
+                            <div class="r-card">
+                                <div class="icon"><img class="image" src="/Assets/Lock.png" alt="Lock Icon"> </div>
+                                <div class="title2">Security Alerts</div>
+                                <p class="para3">Get notified about security changes</p>
+                                <p class="enableInp"><input class="check" type="checkbox">Enable security alerts</p>
+                            </div>
+
+                        </div>
+
+                        <div class="title" id="activity"><img class="image icon2" src="/Assets/Recent_Activity.png"
+                                alt="Activity Icon">Recent Activity</div>
+                        <div class="ractCard">
+                            <div class="r-card lastBox">
+                                <div><input class="check" type="checkbox"></div>
+                                <div class="update">Profile Updated</div>
+                                <p class="para3">Your profile information was successfully updated Today</p>
+                            </div>
+
+
+
+                        </div>
+
+
+
+                    </div>
+                </section>
+
+                <section id="help" class="dashPage ">
+                    <div class="top-navbar">
+                        <h3>WebTech Practice Dashboard</h3>
+                    </div>
+                    <div class="dashboard-card">
+                        <div class="notification">
+                            <h2 id="help-tite">Help & Support</h2>
+                            <div class="title icon" id="help"><img class="image icon1" src="/Assets/Question_Mark.png"
+                                    alt="Question_Mark-Icon">Frequently Asked Questions</div>
+                        </div>
+
+                        <div class="ractCard">
+                            <div class="r-card">
+                                <div class="title2"><b>How do I update my profile?</b></div>
+                                <p class="para3">Click on "Profile Settings" in sidebar to edit your personal
+                                    information,
+                                    address, and other details</p>
+                            </div>
+
+                            <div class="r-card">
+                                <div class="title2"><b>Is my data secure?</b></div>
+                                <p class="para3">This is a demo application that stores data in your browser's
+                                    localStorage. In
+                                    a production app, data would be encrypted and stored securely on servers. </p>
+                            </div>
+
+
+                            <div class="r-card">
+                                <div class="title2"><b>How do I change my password?</b></div>
+                                <p class="para3">Go to "Security" in the sidebar, enter your current password, then
+                                    set and
+                                    confirm your new password.</p>
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+                        <div class="lastContainer">
+                            <div class="title" id="activity"><img class="image icon2" src="/Assets/Phone.png"
+                                    alt="Activity Icon">Contact Support</div>
+                            <div class="ractCard">
+                                <p id="para3">This is a demonstration application for learning web development. in a
+                                    real
+                                    application, you would find Contact information and support options here.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+
+        </div>
+    </section>
+
+
+</body>
+<script src="/js files/Dashbrd-script.js" defer></script>
+
+</html>

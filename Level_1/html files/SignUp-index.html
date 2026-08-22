@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp-Page</title>
+    <link rel="stylesheet" href="/css-files/SignUp-style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h2>Create your account</h2>
+
+        <p class="subtitle">
+            Sign up to access the practice dashboard.
+        </p>
+
+        <form class="signUp-form">
+
+            <div class="row">
+
+                <div class="input-group">
+                    <label for="fname">First Name:</label>
+                    <input type="text" name="First" id="fname" placeholder="Enter First Name" required>
+                    <p id="errFirst"></p><!-- use inner HTML -->
+                </div>
+
+                <div class="input-group">
+                    <label for="lname">Last Name:</label>
+                    <input type="text" name="Last" id="lname" placeholder="Enter Last Name" >
+                    <p id="errLast"></p><!-- use inner HTML -->                    
+                </div>
+
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email Address:</label>
+                <input type="email" name="Email" id="email" placeholder="Enter your email address" >
+                <p id="errEmail"></p><!-- use inner HTML -->                    
+            </div>
+
+            <div class="row">
+
+                <div class="input-group">
+                    <label for="password">Password:</label>
+                    <input type="password" name="Password" id="password" placeholder="Enter Password" >
+                    <p id="errPass"></p><!--innerHtml se text inject krna hai-->                     
+                </div>
+
+                <div class="input-group">
+                    <label for="confirm">Confirm Password:</label>
+                    <input type="password" name="Confirm" id="confirm" placeholder="Confirm Password">
+                    <p id="errConfirm"></p><!--innerHtml se text inject krna hai-->                    
+                </div>  
+            </div>
+
+            <p class="note">
+                Use at least 8 characters, with letter & number.
+            </p>
+
+            <div class="terms">
+                <input type="checkbox" name="check" id="agree" required>
+                <label for="agree">
+                    I agree to the Terms
+                </label>
+            </div>
+
+            <button type="submit">Create Account</button>
+
+            <div class="login">
+
+                Already have account?
+
+                <a href="http://127.0.0.1:5500/html%20files/Login-Index.html">
+                    Sign in
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+<script src="/js files/SignUp-script.js" ></script>
+</html>
+
+
