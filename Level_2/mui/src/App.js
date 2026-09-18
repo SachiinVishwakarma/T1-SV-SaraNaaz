@@ -5,13 +5,12 @@ import LandingPage from "./Pages/LandingPage.js";
 
 function App() {
   return (
-    <>
+    
 <BrowserRouter>
 <Routes>
   <Route path='/' element={<LandingPage />}>  </Route>
     </Routes>
     </BrowserRouter>
-    </>
   );
 }
 

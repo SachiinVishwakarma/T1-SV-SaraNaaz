@@ -4,6 +4,8 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import sliderTheme from "../../Theme/sliderTheme.js";
 import { useTheme } from "@emotion/react";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 function Slider() {
   const [current, setCurrent] = useState(0);
@@ -69,7 +71,7 @@ const theme=useTheme();
           ...style.previousButton,
         }}
       >
-         &#8249;
+          <ChevronLeftIcon />
       </Button>
 
       <Button
@@ -79,7 +81,7 @@ const theme=useTheme();
           ...style.nextButton,
         }}
       >
-       &#8250;
+     <ChevronRightIcon />
       </Button>
 
       <Box
