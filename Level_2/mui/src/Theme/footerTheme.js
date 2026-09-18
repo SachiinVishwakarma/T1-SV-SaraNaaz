@@ -1,7 +1,7 @@
-const footerTheme = {
+const footerTheme =(theme) =>({
   container: {
-     backgroundColor: "#062748",
-    color: "white",
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.tertiary.main,
      display: "flex",
      alignItems: "center",
     justifyContent: "space-between",
@@ -11,13 +11,13 @@ const footerTheme = {
 
   text: {
     margin: "0",
-    fontSize: "14px",
+   
   },
 
   buttons: {
     display: "flex",
     alignItems: "center",
   },
-};
+});
 
 export default footerTheme;

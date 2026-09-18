@@ -2,7 +2,8 @@ import { useState } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import sliderTheme from "../Theme/sliderTheme.js";
+import sliderTheme from "../../Theme/sliderTheme.js";
+import { useTheme } from "@emotion/react";
 
 function Slider() {
   const [current, setCurrent] = useState(0);
@@ -42,52 +43,55 @@ const previousSlide = () => {
   setCurrent(index);
 };
 
+const theme=useTheme();
+ const style=sliderTheme(theme);
+
   return (
     <Box
-     style={sliderTheme.container}
+     sx={style.container}
     >
-      <Typography
-        style={sliderTheme.title}
+      <Typography variant="h5"
+        sx={style.title}
       >
         {slides[current].title}
       </Typography>
 
-      <Typography
-        style={sliderTheme.text}
+      <Typography variant="body1"
+        sx={style.text}
       >
         {slides[current].text}
       </Typography>
 
       <Button
         onClick={previousSlide}
-         style={{
-          ...sliderTheme.arrowButton,
-          ...sliderTheme.previousButton,
+         sx={{
+          ...style.arrowButton,
+          ...style.previousButton,
         }}
       >
-        ‹
+         &#8249;
       </Button>
 
       <Button
         onClick={nextSlide}
-        style={{
-          ...sliderTheme.arrowButton,
-          ...sliderTheme.nextButton,
+        sx={{
+          ...style.arrowButton,
+          ...style.nextButton,
         }}
       >
-        ›
+       &#8250;
       </Button>
 
       <Box
-       style={sliderTheme.dots}
+       sx={style.dots}
       >
         {slides.map((_, index) => (
           <Box
             key={index}
             onClick={() => setCurrent(index)}
-           style={{
-              ...sliderTheme.dot,
-              ...(current === index ? sliderTheme.activeDot : {}),
+           sx={{
+              ...style.dot,
+              ...(current === index ? style.activeDot : {}),
             }}
           />
         ))}

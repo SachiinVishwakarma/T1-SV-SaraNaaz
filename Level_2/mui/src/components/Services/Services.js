@@ -1,8 +1,9 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import ServiceCard from "./ServiceCard";
-import servicesTheme from "../Theme/servicesTheme.js";
-import serviceCardTheme from "../Theme/serviceCardTheme";
+import servicesTheme from "../../Theme/servicesTheme.js";
+import serviceCardTheme from "../../Theme/serviceCardTheme.js";
+import { useTheme } from "@emotion/react";
 
 function Services() {
   const services = [
@@ -38,21 +39,25 @@ function Services() {
     },
   ];
 
+  
+const theme=useTheme();
+ const style=servicesTheme(theme);
+
   return (
     <Box
       id="services"
-      style={servicesTheme.container}
+      sx={style.container}
     >
       <Typography
         variant="h4"
         fontWeight="bold"
-         style={servicesTheme.heading}
+         sx={style.heading}
       >
         What's Included
       </Typography>
 
       <Box
-        style={servicesTheme.cardsContainer}
+        sx={style.cardsContainer}
       >
         {services.map((service, index) => (
           <ServiceCard

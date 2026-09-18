@@ -2,31 +2,37 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import navbarTheme from "../Theme/navbarTheme.js";
-import signupbtnTheme from "../Theme/signupbtnTheme.js";
+import navbarTheme from "../../Theme/navbarTheme.js";
+import signupbtnTheme from "../../Theme/signupbtnTheme.js";
+import { useTheme } from "@emotion/react";
 
 function Navbar() {
+  const theme=useTheme();
+ const style=navbarTheme(theme);
+
+ const signStyle=signupbtnTheme(theme);
+
   return (
     <AppBar
       position="static"
-       style={navbarTheme.appBar}
+       sx={style.appBar}
     >
       <Toolbar
-        style={navbarTheme.toolbar}
+        sx={style.toolbar}
       >
 
         <Typography
-          variant="h4"
-           style={navbarTheme.title}
+          variant="h6"
+           sx={style.title}
         >
           WebTech Practice
         </Typography>
 
-        <Button color="inherit">
+        <Button color="inherit" href="#about">
           About
         </Button>
 
-        <Button color="inherit">
+        <Button color="inherit" href="#services">
           Services
         </Button>
 
@@ -39,7 +45,7 @@ function Navbar() {
         </Button>
 
         <Button 
-        style={signupbtnTheme}>
+        sx={signStyle}>
         Sign Up
        </Button>
       </Toolbar>

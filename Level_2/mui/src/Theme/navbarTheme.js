@@ -1,6 +1,6 @@
-const navbarTheme = {
+const navbarTheme =(theme)=> ({
   appBar: {
-    backgroundColor: "#062748",
+    backgroundColor: theme.palette.primary.main,
     marginBottom: "30px",
   },
 
@@ -11,9 +11,8 @@ const navbarTheme = {
 
   title: {
     flexGrow: 1,
-   fontSize: "20px",
     fontWeight: "bold",
   },
-};
+});
 
 export default navbarTheme;

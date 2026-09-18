@@ -1,26 +1,24 @@
-const sliderTheme = {
+const sliderTheme= (theme)=> ({
   container: {
     width: "550px",
     height: "300px",
     marginTop: "15px",
     padding: "25px",
     borderRadius: "28px",
-    backgroundColor: "white",
-    color: "black",
-    boxShadow: "0px 0px 5px 1px #062748",
+    backgroundColor: theme.palette.tertiary.main,
+    color: theme.palette.quaternary.main,
+    boxShadow: `0px 0px 5px 1px ${theme.palette.primary.main}`,
     position: "relative",
   },
 
   title: {
     textAlign: "center",
-    fontSize: "28px",
     fontWeight: "bold",
     marginTop: "70px",
   },
 
   text: {
     textAlign: "center",
-    fontSize: "18px",
     marginTop: "15px",
     padding: "0 70px",
   },
@@ -33,7 +31,7 @@ const sliderTheme = {
     height: "48px",
     padding: 0,
     borderRadius: "12px",
-  backgroundColor: "#40e0d0",
+  backgroundColor: theme.palette.secondary.main,
     fontSize: "32px",
   },
 
@@ -62,13 +60,12 @@ justifyContent: "center",
 borderRadius: "10px",
     backgroundColor: "#d9d9d9",
      cursor: "pointer",
-    transition: "0.3s",
   },
 
  activeDot: {
   width: "32px",
-    backgroundColor: "#40e0d0",
+    backgroundColor: theme.palette.secondary.main,
   },
-};
+});
 
 export default sliderTheme;

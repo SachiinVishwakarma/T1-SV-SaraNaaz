@@ -1,14 +1,17 @@
-const aboutTheme = {
+const aboutTheme=(theme)=>({
+
   container: {
     padding: "50px 10%",
-     marginTop:"90px",
+     marginTop:"100px",
+     marginBottom: "35px",
     textAlign:"center",
   },
 
   description: {
       maxWidth: "700px",
     margin:"20px auto",
-    color: "black",
+    color: theme.palette.quaternary.main,
+
   },
 
   featuresContainer: {
@@ -18,11 +21,13 @@ const aboutTheme = {
 
   feature: {
   backgroundColor:"white",
-    border:"1px solid #40e0d0",
+    border:`1px solid ${theme.palette.secondary.main}`,
   borderRadius:"7px",
     padding: "15px",
     marginBottom:"12px",
   },
-};
+ });
+
+
 
 export default aboutTheme;

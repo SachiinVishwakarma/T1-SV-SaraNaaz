@@ -1,6 +1,6 @@
 // import Container from "@mui/material/Container";
 
-const serviceTheme ={
+const serviceTheme= (theme)=> ({
     container: {
          padding: "50px 10%",
         textAlign: "center",
@@ -14,7 +14,7 @@ const serviceTheme ={
     gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
     gap: "20px",
   },
-};
+});
 
 export default serviceTheme; 
 

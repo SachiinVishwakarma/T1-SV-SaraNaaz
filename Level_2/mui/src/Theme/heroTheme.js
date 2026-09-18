@@ -1,10 +1,11 @@
-const heroTheme = {
+const heroTheme=(theme)=> ({
   container: {
      display: "flex",
     justifyContent: "space-between",
    padding: "50px 10%",
-    marginTop: "60px",
-      gap: "40px",
+    marginTop: "97px",
+    // marginBottom: "60px",
+    gap: "40px",
     alignItems: "center",
   },
 
@@ -18,7 +19,7 @@ const heroTheme = {
   },
 
   description: {
-   color: "black",
+   color: theme.palette.quaternary.main,
     marginBottom: "25px",
   },
 
@@ -28,12 +29,12 @@ const heroTheme = {
   },
 
   loginButton: {
-   borderColor: "#40e0d0",
+   borderColor: theme.palette.secondary.main,
     height: "40px",
    borderRadius: "15px",
     textTransform: "none",
-     color: "black",
+     color: theme.palette.quaternary.main,
   },
-};
+});
 
 export default heroTheme;

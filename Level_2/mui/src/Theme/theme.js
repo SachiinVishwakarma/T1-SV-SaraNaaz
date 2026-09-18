@@ -8,6 +8,13 @@ const theme= createTheme({
          secondary:{
             main:"#40e0d0",
         },
+
+        tertiary:{
+            main:"#ffffff",
+        },
+        quaternary:{
+            main: "#000000",
+        },
     },
 
     components:{

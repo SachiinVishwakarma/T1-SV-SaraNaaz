@@ -1,48 +1,54 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import Slider from "./Slider";
-import heroTheme from "../Theme/heroTheme";
-import signupbtnTheme from "../Theme/signupbtnTheme.js";
+import Slider from "./Slider.js";
+import heroTheme from "../../Theme/heroTheme.js";
+import signupbtnTheme from "../../Theme/signupbtnTheme.js";
+import { useTheme } from "@emotion/react";
+
 
 function Hero() {
+  const theme=useTheme();
+ const style=heroTheme(theme);
+ const signStyle=signupbtnTheme(theme);
+
   return (
     <Box
-      style={heroTheme.container}
+      sx={style.container}
     >
-      <Box style={heroTheme.content}>
+      <Box sx={style.content}>
         <Typography
          variant="h4"
-          style={heroTheme.heading}
+          sx={style.heading}
         >
           Launch your Web Tech practice site in minutes
         </Typography>
 
         <Typography
            variant="body1"
-          style={heroTheme.description}
+          sx={style.description}
         >
           A clean, Modern Starter template with Login, Signup,
           Dashboard, Profile and Logout pages using only HTML,
           CSS, JS and browser localStorage.
         </Typography>
 
-        <Box style={heroTheme.buttons}>
+        <Box sx={style.buttons}>
          <Button 
-        style={signupbtnTheme}>
+        sx={signStyle}>
         Sign Up
        </Button>
 
           <Button
              variant="outlined"
-            style={heroTheme.loginButton}
+            sx={style.loginButton}
           >
             I already have an account
           </Button>
         </Box>
       </Box>
 
-      <Box style={heroTheme.content}>
+      <Box sx={style.content}>
         <Slider />
       </Box>
     </Box>
