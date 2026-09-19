@@ -20,9 +20,10 @@ const aboutTheme=(theme)=>({
   },
 
   feature: {
-  backgroundColor:"white",
+  backgroundColor:theme.palette.tertiary.main,
     border:`1px solid ${theme.palette.secondary.main}`,
-  borderRadius:"7px",
+    
+  borderRadius: theme.shape.aboutBox_BR,
     padding: "15px",
     marginBottom:"12px",
   },

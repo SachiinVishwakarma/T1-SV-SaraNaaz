@@ -4,7 +4,7 @@ const sliderTheme= (theme)=> ({
     height: "300px",
     marginTop: "15px",
     padding: "25px",
-    borderRadius: "28px",
+    borderRadius: theme.shape.sliderContainer_BR,
     backgroundColor: theme.palette.tertiary.main,
     color: theme.palette.quaternary.main,
     boxShadow: `0px 0px 5px 1px ${theme.palette.primary.main}`,
@@ -30,9 +30,8 @@ const sliderTheme= (theme)=> ({
     width: "48px",
     height: "48px",
     padding: 0,
-    borderRadius: "12px",
+  borderRadius: theme.shape.sliderArrow_BR,
   backgroundColor: theme.palette.secondary.main,
-    fontSize: "32px",
   },
 
   previousButton: {
@@ -56,9 +55,10 @@ justifyContent: "center",
   dot: {
     width: "13px",
     height: "13px",
-    
-borderRadius: "10px",
-    backgroundColor: "#d9d9d9",
+
+borderRadius: theme.shape.sliderDot_BR,
+
+    backgroundColor: theme.palette.Quinary.main,
      cursor: "pointer",
   },
 

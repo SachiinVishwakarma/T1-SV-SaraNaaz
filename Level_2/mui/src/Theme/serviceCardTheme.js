@@ -1,6 +1,6 @@
 const serviceCardTheme = (theme)=>({
   card: {
-     borderRadius: "15px",
+     borderRadius: theme.shape.already_ServiceCard_BR,
     boxShadow: `0px 2px 8px ${ theme.palette.secondary.main}60`,
   },
 

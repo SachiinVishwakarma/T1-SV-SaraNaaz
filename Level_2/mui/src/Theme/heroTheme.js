@@ -4,7 +4,6 @@ const heroTheme=(theme)=> ({
     justifyContent: "space-between",
    padding: "50px 10%",
     marginTop: "97px",
-    // marginBottom: "60px",
     gap: "40px",
     alignItems: "center",
   },
@@ -31,7 +30,8 @@ const heroTheme=(theme)=> ({
   loginButton: {
    borderColor: theme.palette.secondary.main,
     height: "40px",
-   borderRadius: "15px",
+   
+   borderRadius: theme.shape.already_ServiceCard_BR,
     textTransform: "none",
      color: theme.palette.quaternary.main,
   },

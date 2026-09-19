@@ -15,6 +15,17 @@ const theme= createTheme({
         quaternary:{
             main: "#000000",
         },
+        Quinary :{
+            main: "#d9d9d9",
+        },
+    },
+
+    shape:{
+        aboutBox_BR: "7px",
+        already_ServiceCard_BR: "15px",
+        sliderContainer_BR: "28px",
+        sliderArrow_BR: "12px",
+        sliderDot_BR: "10px",
     },
 
     components:{
