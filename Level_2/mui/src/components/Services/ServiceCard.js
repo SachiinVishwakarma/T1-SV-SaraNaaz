@@ -12,7 +12,7 @@ function ServiceCard({ title, description }) {
       sx={style.card}
     >
       <CardContent>
-        <Typography variant="h6" fontWeight="bold">
+        <Typography variant="h6" sx={style.heading}>
           {title}
         </Typography>
 

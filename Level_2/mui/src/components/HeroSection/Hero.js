@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 import Slider from "./Slider.js";
 import heroTheme from "../../Theme/heroTheme.js";
 import signupbtnTheme from "../../Theme/signupbtnTheme.js";
-import { useTheme } from "@emotion/react";
+import { useTheme } from "@mui/material/styles";
 
 
 function Hero() {

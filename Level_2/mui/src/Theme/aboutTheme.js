@@ -7,6 +7,11 @@ const aboutTheme=(theme)=>({
     textAlign:"center",
   },
 
+  head: {
+    fontWeight: theme.typography.customFontWeight.bold,
+
+  },
+
   description: {
       maxWidth: "700px",
     margin:"20px auto",
@@ -23,7 +28,7 @@ const aboutTheme=(theme)=>({
   backgroundColor:theme.palette.tertiary.main,
     border:`1px solid ${theme.palette.secondary.main}`,
     
-  borderRadius: theme.shape.aboutBox_BR,
+  borderRadius: theme.shape.customRadius.xxs,
     padding: "15px",
     marginBottom:"12px",
   },

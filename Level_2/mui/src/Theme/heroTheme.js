@@ -14,7 +14,11 @@ const heroTheme=(theme)=> ({
 
   heading: {
     marginBottom: "20px",
-  fontWeight: "bold",
+
+
+
+
+  fontWeight: theme.typography.customFontWeight.bold,
   },
 
   description: {
@@ -31,7 +35,7 @@ const heroTheme=(theme)=> ({
    borderColor: theme.palette.secondary.main,
     height: "40px",
    
-   borderRadius: theme.shape.already_ServiceCard_BR,
+   borderRadius: theme.shape.customRadius.xs,
     textTransform: "none",
      color: theme.palette.quaternary.main,
   },

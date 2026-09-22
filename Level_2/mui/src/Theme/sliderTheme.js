@@ -4,7 +4,8 @@ const sliderTheme= (theme)=> ({
     height: "300px",
     marginTop: "15px",
     padding: "25px",
-    borderRadius: theme.shape.sliderContainer_BR,
+   
+    borderRadius: theme.shape.customRadius.sm,
     backgroundColor: theme.palette.tertiary.main,
     color: theme.palette.quaternary.main,
     boxShadow: `0px 0px 5px 1px ${theme.palette.primary.main}`,
@@ -13,7 +14,8 @@ const sliderTheme= (theme)=> ({
 
   title: {
     textAlign: "center",
-    fontWeight: "bold",
+
+    fontWeight: theme.typography.customFontWeight.bold,
     marginTop: "70px",
   },
 
@@ -30,7 +32,7 @@ const sliderTheme= (theme)=> ({
     width: "48px",
     height: "48px",
     padding: 0,
-  borderRadius: theme.shape.sliderArrow_BR,
+  borderRadius: theme.shape.customRadius.xxs,
   backgroundColor: theme.palette.secondary.main,
   },
 
@@ -56,7 +58,7 @@ justifyContent: "center",
     width: "13px",
     height: "13px",
 
-borderRadius: theme.shape.sliderDot_BR,
+borderRadius: theme.shape.customRadius.xs,
 
     backgroundColor: theme.palette.Quinary.main,
      cursor: "pointer",

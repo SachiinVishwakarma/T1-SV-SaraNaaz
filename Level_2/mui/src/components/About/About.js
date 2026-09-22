@@ -21,7 +21,7 @@ function About() {
       id="about"
       sx={style.container}
     >
-      <Typography variant="h4" fontWeight="bold">
+      <Typography variant="h4" sx={style.head}>
         About This Project
       </Typography>
 

@@ -22,7 +22,6 @@ function Navbar() {
       >
 
         <Typography
-          variant="h6"
            sx={style.title}
         >
           WebTech Practice

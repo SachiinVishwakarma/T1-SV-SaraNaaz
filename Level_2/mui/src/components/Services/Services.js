@@ -50,7 +50,6 @@ const theme=useTheme();
     >
       <Typography
         variant="h4"
-        fontWeight="bold"
          sx={style.heading}
       >
         What's Included

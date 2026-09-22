@@ -7,6 +7,7 @@ const serviceTheme= (theme)=> ({
     },
      heading: {
     marginBottom: "30px",
+    fontWeight: theme.typography.customFontWeight.bold,
   },
 
   cardsContainer: {

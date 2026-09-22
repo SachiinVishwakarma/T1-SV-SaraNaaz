@@ -11,6 +11,8 @@ const footerTheme =(theme) =>({
 
   text: {
     margin: "0",
+        fontWeight: theme.typography.customFontWeight.semibold,
+
    
   },
 

@@ -11,7 +11,8 @@ const navbarTheme =(theme)=> ({
 
   title: {
     flexGrow: 1,
-    fontWeight: "bold",
+    fontWeight: theme.typography.customFontWeight.bold,
+   fontSize: theme.typography.customFontSize.lg,
   },
 });
 
