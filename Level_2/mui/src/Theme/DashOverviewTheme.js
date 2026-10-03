@@ -2,7 +2,7 @@ const dashOverviewTheme = (theme) => ({
   dashboardCard: {
     boxShadow: `0px -3px 10px ${theme.palette.secondary.main}`,
     backgroundColor: theme.palette.tertiary.main,
-    margin: "38px 150px 200px 29px",
+    margin: "3% 8% 20% 2%",
     borderRadius: theme.shape.customRadius.sm,
     padding: "15px 50px 30px 29px",
     boxSizing: "border-box",
@@ -72,7 +72,7 @@ const dashOverviewTheme = (theme) => ({
     borderRadius: theme.shape.customRadius.sm,
     backgroundColor: theme.palette.primary.contrastBG,
     margin: "10px 13px",
-    width: "445px",
+    width: "465px",
     height: "120px",
     padding: "25px 15px 0px 15px",
     boxSizing: "border-box",
