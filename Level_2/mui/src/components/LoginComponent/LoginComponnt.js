@@ -2,9 +2,13 @@ import { Box, Typography, TextField, Button, Checkbox } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import LoginTheme from "../../Theme/LoginTheme.js";
 
-function Login() {
+import useLoginLogic from "./loginLogic.js";
+
+function Login({children}) {
   const theme = useTheme();
   const style = LoginTheme(theme);
+  const {formData, error, handleChange, handleSubmit}= useLoginLogic();
+
 
   return (
     <Box sx={style.page}>
@@ -21,8 +25,10 @@ function Login() {
           </Typography>
         </Box>
 
+
+
      
-        <Box component="form" sx={style.form}>
+        <Box component="form" onSubmit={handleSubmit} sx={style.form}>
 
          
           <Box sx={style.field}>
@@ -31,8 +37,15 @@ function Login() {
             </Typography>
 
             <TextField
+            onChange={handleChange}
+             name="email"
+              value={formData.email}
+              error={!!error.email}
+              helperText={error.email}
+              type="email"
+          
               fullWidth
-              type="text"
+              // type="text"
               placeholder="Enter your email address"
               variant="outlined"
               sx={style.input}
@@ -46,6 +59,11 @@ function Login() {
             </Typography>
 
             <TextField
+            onChange={handleChange}
+            name="password"
+                value={formData.password}
+                error={!!error.password}
+                helperText={error.password}
               fullWidth
               type="password"
               placeholder="Enter password"
@@ -76,26 +94,13 @@ function Login() {
             </Typography>
           </Box>
 
+         {children}
          
-          <Button
-            type="submit"
-            fullWidth
-            sx={style.button}
-          >
-            Sign in
-          </Button>
+        
         </Box>
 
        
-        <Box sx={style.createAccount}>
-          <Typography component="span" sx={style.smallText}>
-            New to WebTech Practice?{" "}
-          </Typography>
-
-          <Typography component="span" sx={style.link}>
-            Create an account
-          </Typography>
-        </Box>
+       
 
       </Box>
     </Box>

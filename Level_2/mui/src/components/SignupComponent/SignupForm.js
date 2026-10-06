@@ -2,14 +2,17 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Checkbox from "@mui/material/Checkbox";
-import Button from "@mui/material/Button";
 import signupTheme from "../../Theme/signupTheme.js";
 import { useTheme } from "@mui/material/styles";
+import useSignupLogic from "./signupLogic.js";
 
-function SignupForm() {
+
+function SignupForm({children}) {
   const theme = useTheme();
   const style = signupTheme(theme);
+  const {formData, error, handleChange, handleSubmit}= useSignupLogic();
 
+ 
   return (
     <Box sx={style.container}>
       <Box sx={style.card}>
@@ -28,7 +31,7 @@ function SignupForm() {
           Sign up to access the practice dashboard.
         </Typography>
 
-        <Box component="form">
+        <Box component="form" onSubmit={handleSubmit}>
 
           <Box sx={style.row}>
 
@@ -38,8 +41,14 @@ function SignupForm() {
               </Typography>
 
               <TextField
-                placeholder="Enter First Name"
-                sx={style.input}
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleChange}
+              error={!!error.firstName}
+              helperText={error.firstName}
+              placeholder="Enter First Name"
+              sx={style.input}
+
               />
             </Box>
 
@@ -49,6 +58,11 @@ function SignupForm() {
               </Typography>
 
               <TextField
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
+                error={!!error.lastName}
+                helperText={error.lastName}
                 placeholder="Enter Last Name"
                 sx={style.input}
               />
@@ -66,6 +80,11 @@ function SignupForm() {
             </Typography>
 
             <TextField
+             name="email"
+              value={formData.email}
+              onChange={handleChange}
+              error={!!error.email}
+              helperText={error.email}
               type="email"
               placeholder="Enter your email address"
               sx={style.input}
@@ -85,6 +104,11 @@ function SignupForm() {
               </Typography>
 
               <TextField
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                error={!!error.password}
+                helperText={error.password}
                 type="password"
                 placeholder="Enter Password"
                 sx={style.input}
@@ -99,6 +123,11 @@ function SignupForm() {
               </Typography>
 
               <TextField
+                name="confirmPassword"
+                value={formData.confirmPassword}
+                onChange={handleChange}
+                error={!!error.confirmPassword}
+                helperText={error.confirmPassword}
                 type="password"
                 placeholder="Confirm Password"
                 sx={style.input}
@@ -118,7 +147,12 @@ function SignupForm() {
 
           <Box sx={style.terms}>
 
-            <Checkbox sx={style.checkbox} />
+            <Checkbox
+             sx={style.checkbox}
+             name="terms"
+             checked={formData.terms}
+             onChange={handleChange}
+             />
 
             <Typography sx={style.termsLabel}>
               I agree to the Terms
@@ -126,29 +160,9 @@ function SignupForm() {
 
           </Box>
 
+     {children}
 
-
-          <Button
-            type="submit"
-            sx={style.createButton}
-          >
-            Create Account
-          </Button>
-
-
-          <Typography sx={style.login}>
-            Already have account?{" "}
-
-            <Box
-              component="a"
-              href="/"
-              sx={style.loginLink}
-            >
-              Sign in
-            </Box>
-
-          </Typography>
-
+         
         </Box>
 
       </Box>
