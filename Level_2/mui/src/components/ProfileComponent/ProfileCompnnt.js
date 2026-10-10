@@ -2,7 +2,7 @@ import { Box, Typography, Button, TextField } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import ProfileCompnntTheme from "../../Theme/ProfileCompnntTheme.js";
 import InputBox from "../AuthAndInputComponent/InputBox.js";
-
+// sending
 function ProfileComponnt({
   fullName,
   dateOfBirth,

@@ -2,7 +2,7 @@ import {TextField, Box, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import InputBoxTheme from "../../Theme/InputBoxTheme.js"
 
-
+// sending
 function InputBox({label,name,value,onChange,error,helperText, size ,type,placeholder}){
       const theme = useTheme();
   const style = InputBoxTheme(theme);

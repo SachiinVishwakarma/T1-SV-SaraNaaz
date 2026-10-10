@@ -1,6 +1,7 @@
 import DashComponent from "../components/DashComponent/DashComponent.js";
 import ProfileComponnt from "../components/ProfileComponent/ProfileCompnnt.js";
 import { useState } from "react";
+// sending
 
 function DashProfile() {
    const [fullName, setFullName] = useState("");
