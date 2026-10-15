@@ -17,7 +17,6 @@ const helpSupportTheme = (theme) => ({
 
     minHeight: "386px",
     boxSizing: "border-box",
-    // padding: "22px 31px 30px",
     backgroundColor: theme.palette.tertiary.main,
     border: `1px solid ${theme.palette.secondary.main}`,
     borderRadius: theme.shape.customRadius.sm,
@@ -30,7 +29,7 @@ const helpSupportTheme = (theme) => ({
 
   heading: {
     fontSize: theme.typography.customFontSize.lg,
-    fontWeight: theme.customFontWeight?.semibold || 600,
+    fontWeight: theme.typography.customFontWeight.semibold,
     color: theme.palette.quaternary.main,
     marginBottom: "20px",
 
@@ -73,14 +72,14 @@ const helpSupportTheme = (theme) => ({
 
   question: {
     fontSize: theme.typography.customFontSize.sm,
-    fontWeight: theme.customFontWeight?.semibold || 600,
+    fontWeight: theme.typography.customFontWeight.semibold,
     color: theme.palette.quaternary.main,
     marginBottom: "7px",
   },
 
   answer: {
     fontSize: theme.typography.customFontSize.sm,
-    fontWeight: theme.customFontWeight?.regular || 400,
+    fontWeight: theme.typography.customFontWeight.regular,
     lineHeight: 1.5,
     color: theme.palette.quaternary.main,
   },
@@ -96,7 +95,7 @@ const helpSupportTheme = (theme) => ({
 
   contactDescription: {
     fontSize: theme.typography.customFontSize.sm,
-    fontWeight: theme.customFontWeight?.regular || 400,
+    fontWeight: theme.typography.customFontWeight.regular,
     lineHeight: 1.5,
     color: theme.palette.quaternary.main,
     marginTop: "15px",
