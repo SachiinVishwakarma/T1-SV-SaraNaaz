@@ -1,16 +1,18 @@
 
-//Adding
+//changed
 const NotificationTheme = (theme) => ({
   card: {
     width: "auto",
     minHeight: "440px",
-    margin: "4% 7% 20% 4%",
-    padding: "26px 30px 46px",
     boxSizing: "border-box",
     backgroundColor: theme.palette.tertiary.main,
     border: `1px solid ${theme.palette.secondary.main}`,
-    borderRadius: theme.shape.customRadius.md,
-    boxShadow: `0px -3px 10px ${theme.palette.secondary.main}80`,
+    borderRadius: theme.shape.customRadius.sm,
+
+
+    boxShadow: `0px -3px 10px ${theme.palette.secondary.main}90`,
+    margin: "4% 7% 20% 4%",
+    padding: "15px 50px 30px 29px",
 
     [theme.breakpoints.down("sm")]: {
       margin: "15px",

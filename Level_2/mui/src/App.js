@@ -1,11 +1,13 @@
 import LandingPage from "./Pages/LandingPage.js";
 import SignupPage from "./Pages/SignupPage.js";
 import LoginPage from "./Pages/LoginPage.js";
-import DashOverview from "./Pages/DashOverview.js";
-import DashProfile from "./Pages/DashProfile.js";
-import DashSecurity from "./Pages/DashSecurity.js";
-import DashNotification from "./Pages/DashNotification.js";
-import DashHelpSupport from "./Pages/DashHelpSupport.js";
+import DashboardPage from "./Pages/DashboardPage.js";
+
+import DashOverview from "./DashboardCards/OverviewCard/OverviewCard.js";
+import DashProfile from "./DashboardCards/ProfileCard/ProfileCard.js";
+import DashSecurity from "./DashboardCards/SecurityCard/SecurityCard.js";
+import DashNotification from "./DashboardCards/NotificationCard/NotificationCard.js";
+import DashHelpSupport from "./DashboardCards/HelpSupportCard/HelpSupportCard.js";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 
@@ -13,21 +15,27 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 function App() {
   return (
-    
+   
 <BrowserRouter>
-<Routes>
-  <Route path='/' element={<LandingPage />}></Route>
-  <Route path='/signup' element={<SignupPage />}></Route>
+  <Routes>
+    <Route path='/' element={<LandingPage />}></Route>
+    <Route path='/signup' element={<SignupPage />}></Route>
     <Route path='/login' element={<LoginPage />}></Route>
-    <Route path='/DashBoard/Overview' element={<DashOverview />}></Route>
-    
-<Route path="/DashBoard/Profile" element={<DashProfile />} />
-<Route path="/DashBoard/Security" element={<DashSecurity />} />
-<Route path="/DashBoard/Notification" element={<DashNotification />} />
-<Route path="/DashBoard/Help&Support" element={<DashHelpSupport />} />
 
-    </Routes>
-    </BrowserRouter>
+    <Route path="/DashBoard" element={<DashboardPage />} >
+
+
+       <Route path='Overview' element={<DashOverview />}/>
+    
+       <Route path="Profile" element={<DashProfile />} />
+       <Route path="Security" element={<DashSecurity />} />
+       <Route path="Notification" element={<DashNotification />} />
+       <Route path="Help&Support" element={<DashHelpSupport />} />
+
+    </Route>
+
+  </Routes>
+ </BrowserRouter>
   );
 }
 
