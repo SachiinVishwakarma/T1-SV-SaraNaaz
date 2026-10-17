@@ -1,10 +1,18 @@
 import { Box, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import { Link } from "react-router-dom";
 import DashOverviewTheme from "../../Theme/OverviewTheme.js";
+import { getLastUser } from "../../components/StorageDataSetandGet/setAndGet.js";
+
 
 function DashOverview() {
   const theme = useTheme();
   const style = DashOverviewTheme (theme);
+
+   const LastUser = getLastUser();
+       
+       let logedFName=LastUser[0]["First Name"];
+       let logedLName=LastUser[0]["Last Name"];
 
   return (
     
@@ -14,7 +22,7 @@ function DashOverview() {
         <Box sx={style.welcomeSection}>
 
           <Typography sx={style.welcomeHeading}>
-            Welcome back, Demo User
+            Welcome back, {`${logedFName} ${logedLName}`}
           </Typography>
 
           <Typography sx={style.description}>
@@ -96,7 +104,7 @@ function DashOverview() {
 
         <Box sx={style.rectangleCards}>
 
-          <Box sx={style.rectangleCard}>
+          <Box sx={style.rectangleCard} component={Link} to="/Dashboard/Profile" >
 
             <Typography sx={style.actionTitle}>
               Edit Profile
@@ -109,7 +117,7 @@ function DashOverview() {
           </Box>
 
 
-          <Box sx={style.rectangleCard}>
+          <Box sx={style.rectangleCard} component={Link} to="/Dashboard/security">
 
             <Typography sx={style.actionTitle}>
               Change Password
