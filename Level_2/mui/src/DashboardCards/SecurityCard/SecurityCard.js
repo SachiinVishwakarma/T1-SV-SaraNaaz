@@ -4,14 +4,59 @@ import { useTheme } from "@mui/material/styles";
 import SecurityComponntTheme from "../../Theme/SecurityTheme.js";
 import InputBox from "../../components/AuthAndInputComponent/InputBox.js";
 import calendarIcon from "../../components/Assets/icon.png";
+import validateSecurity from "./securityLogic.js";
+import { getLastUser } from "../../components/StorageDataSetandGet/setAndGet.js";
+import { getUser } from "../../components/StorageDataSetandGet/setAndGet.js";
+
+
 
 function SecurityComponnt() {
   const theme = useTheme();
   const style = SecurityComponntTheme(theme);
 
+//fetching local data
+   const LastUser = getLastUser();
+   let userDetails= getUser();
+       
+       let logedPassword=LastUser[0]["Password"];
+
+       let indexNo = LastUser[0]["Index No"];
+
+
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  
+  const [errors, setErrors] = useState({});
+
+  const formData = {
+  currentPassword,
+  newPassword,
+  confirmPassword,
+};
+
+//added from profile
+  const handleUpdatePassword = () => {
+  const validationErrors = validateSecurity(formData, logedPassword);
+
+  setErrors(validationErrors);
+
+  if (Object.keys(validationErrors).length === 0) {
+    let updatedDate=new Date().toLocaleString();
+
+    userDetails[indexNo]["Password"]=newPassword;
+    userDetails[indexNo]["Last Updated"]=updatedDate;
+            
+
+    LastUser[0]["Password"]=newPassword
+    LastUser[0]["Last Updated"]=updatedDate;
+
+    localStorage.setItem("userDetails",JSON.stringify(userDetails));
+    localStorage.setItem("lastUser",JSON.stringify(LastUser));
+
+    alert("security saved successfully!");
+  }
+};
 
   const handleClear = () => {
     setCurrentPassword("");
@@ -19,25 +64,7 @@ function SecurityComponnt() {
     setConfirmPassword("");
   };
 
-  const handleUpdatePassword = () => {
-    if (!currentPassword || !newPassword || !confirmPassword) {
-      alert("Please fill all password fields.");
-      return;
-    }
-
-    if (newPassword.length < 6) {
-      alert("New password must be at least 6 characters.");
-      return;
-    }
-
-    if (newPassword !== confirmPassword) {
-      alert("New password and confirm password do not match.");
-      return;
-    }
-
-    // password update logic baad mein add karna
-    console.log("Password update clicked");
-  };
+ 
 
   return (
     <Box sx={style.securityCard}>
@@ -63,6 +90,8 @@ function SecurityComponnt() {
           size="medium"
           type="password"
           placeholder="Enter current password"
+          error={Boolean(errors.currentPassword)}
+          helperText={errors.currentPassword}
         />
 
         <InputBox
@@ -72,7 +101,9 @@ function SecurityComponnt() {
           onChange={(e) => setNewPassword(e.target.value)}
           size="medium"
           type="password"
-          placeholder="Minimum 6 characters"
+          placeholder="Minimum 8 characters"
+          error={Boolean(errors.newPassword)}
+          helperText={errors.newPassword}
         />
       </Box>
 
@@ -85,6 +116,8 @@ function SecurityComponnt() {
           size="medium"
           type="password"
           placeholder="Re-enter new password"
+          error={Boolean(errors.confirmPassword)}
+          helperText={errors.confirmPassword}
         />
       </Box>
 
